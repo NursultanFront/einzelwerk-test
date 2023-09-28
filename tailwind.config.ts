@@ -20,6 +20,14 @@ const config: Config = {
       "6xl": ["4rem", "4.5rem"],
       "7xl": ["5.625rem", "6rem"],
     },
+    borderColor: {
+      "gray-100": "#F3F4F6",
+      "gray-200": "#E5E7EB",
+      "gray-400": "#9CA3AF",
+      "gray-500": "#6B7280",
+      "gray-700": "#374151",
+      "blue-500": "#6366F1",
+    },
     extend: {
       colors: {
         white: "#fff",
@@ -34,6 +42,9 @@ const config: Config = {
         "gray-950": "#030712",
         "blue-500": "#6366F1",
         "blue-600": "#4F46E5",
+      },
+      backgroundColor: {
+        "gray-100": "#F3F4F6",
       },
     },
   },

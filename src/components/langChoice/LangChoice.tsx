@@ -1,13 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+
 import { Button } from "../ui/Buttons/Button";
 import cn from "clsx";
 
 import { LangOptions, Lang } from "./types";
+import ArrowIcon from "@/assets/Arrow";
 
 const langs: LangOptions[] = [
-  { name: "Deutch", short: Lang.DE, image: "" },
-  { name: "English", short: Lang.ENG, image: "" },
+  { name: "Deutch", short: Lang.DE, image: "/img/germany.png" },
+  { name: "English", short: Lang.ENG, image: "/img/england.png" },
 ];
 
 const initialLang = () => {
@@ -16,44 +19,50 @@ const initialLang = () => {
     const langIndex = Number(JSON.parse(storedLang));
 
     if (langIndex >= 0 && langIndex < langs.length) {
-      return langs[langIndex].short;
+      return {
+        ...langs[langIndex],
+      };
     }
   }
-  return Lang.DE;
+  return langs[0];
 };
 
 const LangChoice = () => {
   const [langChoose, setLangChoose] = useState<boolean>(true);
-  const [lang, setLang] = useState<Lang>(initialLang);
+  const [lang, setLang] = useState<LangOptions>(initialLang);
 
   const changeLang = (num: number) => {
-    setLang(langs[num].short);
+    setLang(langs[num]);
     setLangChoose(true);
     localStorage.setItem("lang", JSON.stringify(num));
   };
 
   useEffect(() => {
-    const num = Number(localStorage.getItem("lang"));
+    const num = localStorage.getItem("lang");
     if (num) {
-      setLang(langs[num].short);
+      const key = Number(num);
+      setLang(langs[key]);
     }
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <Button
-        className="flex gap-1 items-center"
+        className="flex gap-3 items-center py-3 px-5 border border-gray-500 rounded-2xl"
         onClick={() => {
           setLangChoose(!langChoose);
         }}
       >
-        <div>{lang}</div>
+        <Image src={lang.image} alt="Country flag" width={24} height={24} />
+        <div>{lang.short}</div>
+        <ArrowIcon className={cn({ "rotate-180": !langChoose })} />
       </Button>
 
       <div
         className={cn(
           "absolute",
-          "z-10",
+          "top-14",
+          "z-1",
           "rounded-lg",
           "border-[1px]",
           "bg-white",
@@ -66,13 +75,19 @@ const LangChoice = () => {
         <ul className="flex flex-col">
           {langs.map((item, i) => (
             <li
-              className="py-3 px-5 text-black cursor-pointer hover:bg-[#F2F2F2]"
+              className="py-3 px-5 flex gap-3 w-max border border-gray-100  bg-white cursor-pointer hover:bg-gray-100"
               key={item.short}
               onClick={() => {
                 changeLang(i);
               }}
             >
-              {item.name}
+              <Image
+                src={item.image}
+                alt="Country flag"
+                width={24}
+                height={24}
+              />
+              <div className="text-gray-950"> {item.name}</div>
             </li>
           ))}
         </ul>
