@@ -25,7 +25,7 @@ const Header = () => {
   ];
   return (
     <header>
-      <div className="flex justify-between py-10">
+      <div className="flex justify-between items-center py-10">
         <Link href="/">
           <Logo />
         </Link>
@@ -40,7 +40,7 @@ const Header = () => {
         </nav>
         <div className="flex gap-2">
           <LangChoice />
-          <Button>Contact us</Button>
+          <Button className="py-3.5 px-5 rounded-2xl">Contact us</Button>
         </div>
       </div>
     </header>

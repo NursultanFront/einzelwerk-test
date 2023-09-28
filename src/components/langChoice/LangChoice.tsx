@@ -48,6 +48,7 @@ const LangChoice = () => {
   return (
     <div className="relative ">
       <Button
+        variant="transparent"
         className="flex gap-3 items-center py-3 px-5 border border-gray-500 rounded-2xl"
         onClick={() => {
           setLangChoose(!langChoose);
