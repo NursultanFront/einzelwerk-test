@@ -24,7 +24,7 @@ const Header = () => {
     },
   ];
   return (
-    <header>
+    <header className="container absolute z-10 inset-0">
       <div className="flex justify-between items-center py-10">
         <Link href="/">
           <Logo />
