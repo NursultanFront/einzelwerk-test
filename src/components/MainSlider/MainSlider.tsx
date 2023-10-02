@@ -17,36 +17,26 @@ const MainSlider = (props: IProps) => {
   return (
     <div className="embla overflow-hidden h-screen bg-gray-900" ref={emblaRef}>
       <div className="embla__container flex h-full">
-        <div className="embla__slide flex flex-col justify-center items-center gap-6 absolute inset-0 bg-black opacity-60">
-          <h1 className="text-7xl text-center">{"lolka"}</h1>
-          <p className="text-xl text-center">{"lolka"}</p>
-        </div>
-        <div className="embla__slide flex flex-col justify-center items-center gap-6 absolute inset-0 bg-black opacity-60">
-          <h1 className="text-7xl text-center">{"lolka"}</h1>
-          <p className="text-xl text-center">{"lolka"}</p>
-        </div>
-
-        <div className="embla__slide flex flex-col justify-center items-center gap-6 absolute inset-0 bg-black opacity-60">
-          <h1 className="text-7xl text-center">{"lolka"}</h1>
-          <p className="text-xl text-center">{"lolka"}</p>
-        </div>
-        {/* {props.sliderList.map((item, i) => {
-          console.log(item.image);
+        {props.sliderList.map((item, i) => {
           return (
             <div
               key={i}
-              className={cn(`embla__slide relative flex-none w-full min-w-0`)}
+              className="embla__slide flex flex-col justify-center items-center gap-6 relative flex-none w-full min-w-0"
             >
               <Image
                 src={item.image}
                 alt=""
                 width={1920}
                 height={1080}
-                className=" absolute inset-0 h-full w-full"
+                className=" absolute inset-0 h-full w-full -z-10 opacity-60"
               />
+              <div className="w-[45%]">
+                <h2 className="text-7xl text-center">{item.title}</h2>
+                <p className="text-xl text-center">{item.text}</p>
+              </div>
             </div>
           );
-        })} */}
+        })}
       </div>
     </div>
   );

@@ -7,6 +7,10 @@ import { Button } from "../ui/Buttons/Button";
 import { LangOptions, Lang } from "./types";
 import { ArrowIcon } from "@/components/icons";
 
+interface IProps {
+  borderLess?: boolean;
+}
+
 const langs: LangOptions[] = [
   { name: "Deutch", short: Lang.DE, image: "/img/germany.png" },
   { name: "English", short: Lang.ENG, image: "/img/england.png" },
@@ -26,7 +30,7 @@ const initialLang = () => {
   return langs[0];
 };
 
-const LangChoice = () => {
+const LangChoice = (props: IProps) => {
   const [langChoose, setLangChoose] = useState<boolean>(true);
   const [lang, setLang] = useState<LangOptions>(initialLang);
 
@@ -48,7 +52,11 @@ const LangChoice = () => {
     <div className="relative ">
       <Button
         variant="transparent"
-        className="flex gap-3 items-center py-3 px-5 border border-gray-500 rounded-2xl"
+        className={cn(
+          `flex gap-3 items-center py-3 px-5 border border-gray-500 rounded-2xl ${
+            props.borderLess ? "border-0" : ""
+          }`
+        )}
         onClick={() => {
           setLangChoose(!langChoose);
         }}

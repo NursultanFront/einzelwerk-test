@@ -31,6 +31,9 @@ const config: Config = {
       "blue-500": "#6366F1",
     },
     extend: {
+      borderRadius: {
+        "4xl": "2rem",
+      },
       colors: {
         white: "#fff",
         "green-500": "#30D070",
@@ -47,6 +50,7 @@ const config: Config = {
       },
       backgroundColor: {
         "gray-100": "#F3F4F6",
+        "header-color": "rgba(3, 7, 18, 0.72)",
       },
       keyframes: {
         "back-to-back": {

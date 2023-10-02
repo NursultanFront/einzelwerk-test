@@ -13,8 +13,9 @@ import { Button } from "@/components/ui/Buttons/Button";
 export default function Home() {
   return (
     <div className="">
-      <main className="relative">
+      <main className="">
         {/* <>{props.children}</> */}
+        <Header />
         <MainSlider sliderList={sliderInfo.slider} />
       </main>
       <section className="py-32 bg-gradient-to-t from-gray-900 to-gray-700">
@@ -87,7 +88,7 @@ export default function Home() {
             <div className="flex gap-6">
               Our skillset
               <div className="p-1 border-2 rounded-full border-dashed border-blue-500">
-                <VideoPlayer />
+                {/* <VideoPlayer /> */}
               </div>
               better than
             </div>
