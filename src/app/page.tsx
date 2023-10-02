@@ -7,10 +7,7 @@ import { Button } from "@/components/ui/Buttons/Button";
 import { NextIcon } from "@/components/icons/NextIcon";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import SkillsTablet from "@/components/SkillsTablet/SkillsTablet";
-import Accordion from "@/components/ui/Accordion/Accordion.";
-import { list } from "postcss";
-
-const lsit = [{ label: "lololka", value: "lorem ipsum" }];
+import ProjectWrapper from "@/components/Project/ProjectWrapper";
 
 export default function Home() {
   return (
@@ -104,11 +101,7 @@ export default function Home() {
           <h2 className="mb-24 text-6xl text-center text-transparent bg-gradient-to-r from-white via-gray-400 to-gray-400 bg-clip-text">
             We put our key values <br /> in each project
           </h2>
-          <Accordion
-            placeholder="sdawdawd"
-            value="lowhduauh"
-            list={lsit}
-          ></Accordion>
+          <ProjectWrapper />
         </div>
       </section>
     </div>
