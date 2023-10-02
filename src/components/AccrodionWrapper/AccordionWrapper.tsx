@@ -6,7 +6,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import WhiteArrow from "@/components/icons/WhiteArrow";
+import DropArrow from "@/components/icons/DropArrow";
 
 type Item = {
   title: string;
@@ -27,15 +27,16 @@ export const AccordionWrapper = (props: IProps) => {
           return (
             <AccordionItem
               key={i}
-              onClick={() => {
-                getIndex(i);
-              }}
               className="flex flex-col gap-6 pb-8 border-b border-gray-700"
             >
-              <AccordionItemHeading>
+              <AccordionItemHeading
+                onClick={() => {
+                  getIndex(i);
+                }}
+              >
                 <AccordionItemButton className="flex">
                   <span className="flex-grow text-2xl"> {item.title}</span>
-                  <WhiteArrow />
+                  <DropArrow />
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>

@@ -32,4 +32,4 @@ const NextIcon = () => {
   );
 };
 
-export { NextIcon };
+export default NextIcon;

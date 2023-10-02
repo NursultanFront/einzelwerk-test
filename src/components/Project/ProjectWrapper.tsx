@@ -24,7 +24,7 @@ const ProjectWrapper = () => {
       <AccordionWrapper list={list} getIndex={getIndex} />
       <Image
         src={image[showIndex]}
-        alt="ахахаххахх"
+        alt="Accordion images"
         width={400}
         height={400}
         className="h-auto w-full rounded-3xl"

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -19,6 +20,7 @@ const config: Config = {
       "5xl": ["3rem", "3.5rem"],
       "6xl": ["4rem", "4.5rem"],
       "7xl": ["5.625rem", "6rem"],
+      "8xl": ["10rem", "90%"],
     },
     borderColor: {
       "gray-100": "#F3F4F6",
@@ -46,8 +48,28 @@ const config: Config = {
       backgroundColor: {
         "gray-100": "#F3F4F6",
       },
+      keyframes: {
+        "back-to-back": {
+          "0%": { "background-position": "0 50%" },
+          "50%": { "background-position": "100% 50%" },
+          "100%": { "background-position": "0 50%" },
+        },
+      },
+      animation: {
+        gradient: "back-to-back 10s ease infinite",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".bg-footer-gradient": {
+          background:
+            "linear-gradient(145deg, rgba(255, 255, 255, 1) 59%, rgba(102, 102, 255, 1) 78%, rgba(106, 96, 241, 1) 93%)",
+          "background-size": "200% 200%",
+        },
+      });
+    }),
+  ],
 };
 export default config;

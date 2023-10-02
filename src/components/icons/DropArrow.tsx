@@ -1,6 +1,6 @@
 import React from "react";
 
-const WhiteArrow = () => {
+const DropArrow = () => {
   return (
     <svg
       width="24"
@@ -33,4 +33,4 @@ const WhiteArrow = () => {
   );
 };
 
-export default WhiteArrow;
+export default DropArrow;
