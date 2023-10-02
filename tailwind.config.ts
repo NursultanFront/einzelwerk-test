@@ -72,6 +72,20 @@ const config: Config = {
             "linear-gradient(145deg, rgba(255, 255, 255, 1) 59%, rgba(102, 102, 255, 1) 78%, rgba(106, 96, 241, 1) 93%)",
           "background-size": "200% 200%",
         },
+        ".dots-main": {
+          background: "#fff",
+          opacity: "0.24",
+          width: "48px",
+          height: "8px",
+          borderRadius: "20px",
+        },
+        ".dots-main--active": {
+          background: "#fff",
+          opacity: "1",
+          width: "80px",
+          height: "8px",
+          borderRadius: "20px",
+        },
       });
     }),
   ],

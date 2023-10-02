@@ -1,6 +1,6 @@
 import React from "react";
 import type { PropsWithChildren } from "react";
-import MainSlider from "../MainSlider/MainSlider";
+import MainSlider from "../Slider/MainSlider/MainSlider";
 
 import sliderInfo from "@/text/slider.json";
 
