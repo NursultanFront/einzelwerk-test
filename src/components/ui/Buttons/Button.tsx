@@ -15,8 +15,8 @@ export const Button: FC<IButtonProps> = (props) => {
     <button
       type="button"
       className={cn(className, {
-        "bg-blue-600 hover:bg-blue-500": variant === "primary",
-        "bg-white hover:bg-gray-400": variant === "secondary",
+        "text-white bg-blue-600 hover:bg-blue-500": variant === "primary",
+        "text-gray-950 bg-white hover:bg-gray-400": variant === "secondary",
         "bg-transparent": variant === "transparent",
       })}
       {...otherProps}

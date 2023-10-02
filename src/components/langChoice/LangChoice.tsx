@@ -6,7 +6,7 @@ import { Button } from "../ui/Buttons/Button";
 import cn from "clsx";
 
 import { LangOptions, Lang } from "./types";
-import ArrowIcon from "@/assets/Arrow";
+import ArrowIcon from "@/components/icons/Arrow";
 
 const langs: LangOptions[] = [
   { name: "Deutch", short: Lang.DE, image: "/img/germany.png" },

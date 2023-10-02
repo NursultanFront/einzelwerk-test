@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import {
   FieldErrors,
   FieldValues,
   Path,
   UseFormRegister,
-} from 'react-hook-form';
-import cn from 'clsx';
+} from "react-hook-form";
+import cn from "clsx";
 
 interface TextFieldProps<T extends FieldValues> {
   value?: string;
@@ -28,8 +28,8 @@ const TextField = <T extends FieldValues>(props: TextFieldProps<T>) => {
       <label
         htmlFor={props.id}
         className={cn(
-          'mb-[10px] text-xs',
-          isFocus ? 'opacity-100' : 'opacity-50'
+          "mb-[10px] text-xs",
+          isFocus ? "opacity-100" : "opacity-50"
         )}
       >
         {props.name.toUpperCase()}

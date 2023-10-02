@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "@/assets/header/Logo";
+import Logo from "@/components/icons/header/Logo";
 import Link from "next/link";
 import LangChoice from "../langChoice/LangChoice";
 import { Button } from "../ui/Buttons/Button";
