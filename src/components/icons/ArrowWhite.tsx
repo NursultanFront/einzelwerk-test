@@ -14,7 +14,7 @@ const ArrowWhite = (props: Props) => {
       xmlns="http://www.w3.org/2000/svg"
       className={props.className}
     >
-      <g clip-path="url(#clip0_442_4457)">
+      <g clipPath="url(#clip0_442_4457)">
         <path
           d="M36.4985 17.3334L49.3287 32.0001L36.4985 46.6668"
           stroke="white"
@@ -25,8 +25,8 @@ const ArrowWhite = (props: Props) => {
         <path
           d="M48.3271 32.0001H14.6653"
           stroke="white"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
       </g>
       <defs>

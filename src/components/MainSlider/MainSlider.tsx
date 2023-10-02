@@ -11,7 +11,7 @@ interface IProps {
   sliderList: ISliderInfo[];
 }
 
-export const MainSlider = (props: IProps) => {
+const MainSlider = (props: IProps) => {
   const [emblaRef] = useEmblaCarousel({ loop: false });
 
   return (
@@ -51,3 +51,5 @@ export const MainSlider = (props: IProps) => {
     </div>
   );
 };
+
+export default MainSlider;

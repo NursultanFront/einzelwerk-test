@@ -1,12 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
-import { Button } from "../ui/Buttons/Button";
 import cn from "clsx";
+import { Button } from "../ui/Buttons/Button";
 
 import { LangOptions, Lang } from "./types";
-import ArrowIcon from "@/components/icons/Arrow";
+import { ArrowIcon } from "@/components/icons";
 
 const langs: LangOptions[] = [
   { name: "Deutch", short: Lang.DE, image: "/img/germany.png" },

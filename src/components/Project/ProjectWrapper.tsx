@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
-import { list } from "@/text/accordion.json";
+import accrodionData from "@/text/accordion.json";
 import { AccordionWrapper } from "@/components/AccrodionWrapper/AccordionWrapper";
 import Image from "next/image";
 
 const ProjectWrapper = () => {
   const [showIndex, setShowIndex] = useState<number>(0);
+
+  const { list } = accrodionData;
 
   const image = [
     "/img/camera.png",

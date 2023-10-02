@@ -6,7 +6,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import DropArrow from "@/components/icons/DropArrow";
+import { DropArrowIcon } from "../icons";
 
 type Item = {
   title: string;
@@ -36,7 +36,7 @@ export const AccordionWrapper = (props: IProps) => {
               >
                 <AccordionItemButton className="flex">
                   <span className="flex-grow text-2xl"> {item.title}</span>
-                  <DropArrow />
+                  <DropArrowIcon />
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>

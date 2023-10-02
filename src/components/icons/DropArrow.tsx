@@ -10,7 +10,7 @@ const DropArrow = () => {
       xmlns="http://www.w3.org/2000/svg"
       style={{ transform: "rotate(180deg)" }}
     >
-      <g clip-path="url(#clip0_1201_9365)">
+      <g clipPath="url(#clip0_1201_9365)">
         <path
           d="M17.5 14.4056L12 9.59434L6.5 14.4056"
           stroke="white"

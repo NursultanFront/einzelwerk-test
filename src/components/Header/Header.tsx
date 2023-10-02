@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "@/components/icons/header/Logo";
+import { LogoIcon } from "../icons";
 import Link from "next/link";
 import LangChoice from "../langChoice/LangChoice";
 import { Button } from "../ui/Buttons/Button";
@@ -27,7 +27,7 @@ const Header = () => {
     <header className="container absolute z-10 inset-0">
       <div className="flex justify-between items-center py-10">
         <Link href="/">
-          <Logo />
+          <LogoIcon />
         </Link>
         <nav className="flex">
           <ul className="flex gap-10">
