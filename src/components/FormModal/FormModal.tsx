@@ -61,7 +61,8 @@ const FormModal = () => {
     setSelectedOption(value);
   };
 
-  const onSubmit = (data: FormData) => console.log(data);
+  const onSubmit = (data: FormData) =>
+    console.log({ ...data, skill: selectedOption?.value });
 
   useEffect(() => {
     console.log(errors);
@@ -71,8 +72,10 @@ const FormModal = () => {
     <Popup isOpen={modalOpen} onClose={handleCloseModal}>
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-4">
-          <h2 className="text-gray-950">Drop us a line</h2>
-          <p className="text-gray-700">
+          <h2 className="text-gray-950 text-4xl font-arboria-medium">
+            Drop us a line
+          </h2>
+          <p className="text-gray-700 text-xl font-arboria-book">
             Our documentary campaigns feature leading figures, organisations and
             leaders, in open and candid discussions.
           </p>
@@ -85,7 +88,7 @@ const FormModal = () => {
             errors={errors}
             register={register}
             required
-            className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950"
+            className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950 font-arboria-book"
           />
           <div className="grid grid-cols-2 gap-4">
             <InputPhone
@@ -95,7 +98,7 @@ const FormModal = () => {
               errors={errors}
               register={register}
               required
-              className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950"
+              className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950 font-arboria-book"
             />
 
             <TextField
@@ -105,7 +108,7 @@ const FormModal = () => {
               errors={errors}
               register={register}
               required
-              className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950"
+              className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950 font-arboria-book"
             />
           </div>
           <div className="">
@@ -113,7 +116,7 @@ const FormModal = () => {
               value={selectedOption}
               list={select}
               getValue={getSelectValue}
-              className="text-gray-400 "
+              className="text-gray-400 font-arboria-book"
             />
           </div>
           <div className="">
@@ -127,11 +130,11 @@ const FormModal = () => {
           </div>
 
           <Button
-            className="py-4 rounded-full"
+            className="py-4 rounded-full disabled:opacity-60 font-arboria-medium"
             type="submit"
             disabled={!isChecked}
           >
-            Submit
+            Send
           </Button>
         </form>
       </div>

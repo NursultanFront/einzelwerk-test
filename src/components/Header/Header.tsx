@@ -53,7 +53,9 @@ const Header = () => {
           <ul className="flex gap-10">
             {navLinks.map((item) => (
               <li key={item.text}>
-                <Link href={item.link}>{item.text}</Link>
+                <Link href={item.link} className="font-arboria-book">
+                  {item.text}
+                </Link>
               </li>
             ))}
           </ul>

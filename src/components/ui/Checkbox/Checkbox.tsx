@@ -38,7 +38,11 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
       >
         <OkIcon className={!isChecked ? "hidden" : ""} />
       </div>
-      <label className="text-gray-500" htmlFor={id} onClick={handleToggle}>
+      <label
+        className="text-gray-500 font-arboria-book"
+        htmlFor={id}
+        onClick={handleToggle}
+      >
         <input
           id={id}
           ref={checkboxInputRef}

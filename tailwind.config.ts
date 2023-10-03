@@ -66,6 +66,10 @@ const config: Config = {
         gradient: "back-to-back 10s ease infinite",
       },
     },
+    fontFamily: {
+      "arboria-medium": "var(--font-arboria-medium)",
+      "arboria-book": "var(--font-arboria-book)",
+    },
   },
   plugins: [
     plugin(function ({ addUtilities }) {

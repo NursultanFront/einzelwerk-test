@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <div className="">
       <main className="">
-        {/* <>{props.children}</> */}
         <Header />
         <MainSlider sliderList={sliderInfo.slider} />
       </main>
@@ -89,7 +88,7 @@ export default function Home() {
             <div className="flex gap-6">
               Our skillset
               <div className="p-1 border-2 rounded-full border-dashed border-blue-500">
-                {/* <VideoPlayer /> */}
+                <VideoPlayer />
               </div>
               better than
             </div>

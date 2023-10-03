@@ -1,5 +1,4 @@
 "use client";
-import React, { useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
 
 const VideoPlayer = () => {

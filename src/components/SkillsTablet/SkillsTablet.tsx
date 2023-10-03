@@ -1,9 +1,7 @@
 import React from "react";
 import Tabs from "../Tabs/Tabs";
 
-type Props = {};
-
-const SkillsTablet = (props: Props) => {
+const SkillsTablet = () => {
   return <Tabs></Tabs>;
 };
 

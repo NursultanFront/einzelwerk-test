@@ -41,8 +41,8 @@
   border: 1px solid #e5e7eb;
   background: #f3f4f6; */
   border: none !important;
-
-  color: var(--gray-400, #9ca3af);
+  font-family: "Arboria-Medium";
+  color: #9ca3af;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

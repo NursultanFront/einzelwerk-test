@@ -39,7 +39,7 @@ const LangChoice = (props: IProps) => {
       <Button
         variant="transparent"
         className={cn(
-          `flex gap-3 items-center py-3 px-5 border border-gray-500 rounded-2xl ${
+          `flex gap-3 items-center py-3 px-5 border border-gray-500 rounded-2xl font-arboria-book ${
             props.borderLess ? "border-0" : ""
           }`
         )}
@@ -81,7 +81,10 @@ const LangChoice = (props: IProps) => {
                 width={24}
                 height={24}
               />
-              <div className="text-gray-950"> {item.name}</div>
+              <div className="text-gray-950 font-arboria-book">
+                {" "}
+                {item.name}
+              </div>
             </li>
           ))}
         </ul>
