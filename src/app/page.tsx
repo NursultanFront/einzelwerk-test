@@ -9,6 +9,7 @@ import SkillsTablet from "@/components/SkillsTablet/SkillsTablet";
 import ProjectWrapper from "@/components/Project/ProjectWrapper";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/Buttons/Button";
+import FormModal from "@/components/FormModal/FormModal";
 
 export default function Home() {
   return (
@@ -108,6 +109,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <FormModal />
     </div>
   );
 }

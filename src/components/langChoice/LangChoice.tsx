@@ -16,23 +16,9 @@ const langs: LangOptions[] = [
   { name: "English", short: Lang.ENG, image: "/img/england.png" },
 ];
 
-const initialLang = () => {
-  const storedLang = localStorage.getItem("lang");
-  if (storedLang) {
-    const langIndex = Number(JSON.parse(storedLang));
-
-    if (langIndex >= 0 && langIndex < langs.length) {
-      return {
-        ...langs[langIndex],
-      };
-    }
-  }
-  return langs[0];
-};
-
 const LangChoice = (props: IProps) => {
   const [langChoose, setLangChoose] = useState<boolean>(true);
-  const [lang, setLang] = useState<LangOptions>(initialLang);
+  const [lang, setLang] = useState<LangOptions>(langs[0]);
 
   const changeLang = (num: number) => {
     setLang(langs[num]);

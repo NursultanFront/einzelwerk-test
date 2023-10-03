@@ -47,6 +47,7 @@ const config: Config = {
         "gray-950": "#030712",
         "blue-500": "#6366F1",
         "blue-600": "#4F46E5",
+        "error-color": "#FF2525",
       },
       backgroundColor: {
         "gray-100": "#F3F4F6",

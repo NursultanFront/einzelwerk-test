@@ -4,7 +4,6 @@ import React, { useCallback, useEffect } from "react";
 import useEmblaCarousel, { EmblaCarouselType } from "embla-carousel-react";
 import Image from "next/image";
 import cn from "clsx";
-import Header from "../../Header/Header";
 import { ISliderInfo } from "@/types";
 import { SliderDots } from "../Dots/SliderDots";
 import { useState } from "react";

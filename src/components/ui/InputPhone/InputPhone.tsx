@@ -1,13 +1,11 @@
 "use client";
-
-import { useState } from "react";
 import {
   FieldErrors,
   FieldValues,
   Path,
   UseFormRegister,
 } from "react-hook-form";
-import cn from "clsx";
+import InputMask from "react-input-mask";
 
 interface TextFieldProps<T extends FieldValues> {
   value?: string;
@@ -20,24 +18,18 @@ interface TextFieldProps<T extends FieldValues> {
   className?: string;
 }
 
-const TextField = <T extends FieldValues>(props: TextFieldProps<T>) => {
-  const [isFocus, setFocus] = useState<boolean>(false);
-
+const InputPhone = <T extends FieldValues>(props: TextFieldProps<T>) => {
   return (
     <div className="flex flex-col flex-grow">
-      <input
-        className={props.className}
+      <InputMask
         id={props.id}
         type={props.type}
         {...props.register(props.name)}
-        onFocus={() => {
-          setFocus(true);
-        }}
-        onBlur={() => setFocus(false)}
+        mask="+9 999 999-99-99"
+        className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950"
       />
       {props.errors && props.errors[props.name] && (
         <p className="text-[#FF2525]">
-          {" "}
           {props.errors[props.name]?.message?.toString()}
         </p>
       )}
@@ -45,4 +37,4 @@ const TextField = <T extends FieldValues>(props: TextFieldProps<T>) => {
   );
 };
 
-export default TextField;
+export default InputPhone;
