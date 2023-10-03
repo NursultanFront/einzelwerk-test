@@ -11,6 +11,7 @@ import { Button } from "../ui/Buttons/Button";
 import InputPhone from "../ui/InputPhone/InputPhone";
 
 import "yup-phone";
+import CustomCheckbox from "../ui/Checkbox/Checkbox";
 
 type FormData = yup.InferType<typeof schema>;
 
@@ -41,9 +42,14 @@ const FormModal = () => {
   });
 
   const [modalOpen, setModalOpen] = useState(true);
+  const [isChecked, setChecked] = useState(false);
 
   const handleCloseModal = () => {
     setModalOpen(false);
+  };
+
+  const getCheckboxValue = (value: boolean) => {
+    setChecked(value);
   };
 
   const onSubmit = (data: FormData) => console.log(data);
@@ -88,6 +94,15 @@ const FormModal = () => {
               register={register}
               required
               className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950"
+            />
+          </div>
+          <div className="">
+            <CustomCheckbox
+              id="check"
+              isChecked={isChecked}
+              name="checkbox"
+              label="I’m agree with every data you collect"
+              onChange={getCheckboxValue}
             />
           </div>
           <Button className="" type="submit">

@@ -29,6 +29,7 @@ const config: Config = {
       "gray-500": "#6B7280",
       "gray-700": "#374151",
       "blue-500": "#6366F1",
+      "blue-600": "#4F46E5",
     },
     extend: {
       borderRadius: {
