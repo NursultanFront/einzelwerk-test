@@ -19,6 +19,32 @@
     {
       "title": "Team ",
       "text": "Unsere höchste Priorität liegt dabei, content und storys zu produzieren, die qualitativ hochwertig sind. Dies spiegelt sich in jedem Aspekt unserer Arbeit wider. Dabei legen wir Wert unser Team und individuelle Fähigkeiten auf allen Ebenen zu unterstützen um möglichst erfolgversprechenden Output zu gewährleisten"
+    },
+    {
+      "id": 2,
+      "context_key": "web",
+      "resource_id": 1,
+      "constructor_id": 2,
+      "utm_id": 0,
+      "chunk": "Description",
+      "values": {
+        "title": "We are a production company that supports the global economy and forward-thinking businesses through our digital work in the form of custom films",
+        "button": {
+          "caption": "Learn more about us"
+        }
+      },
+      "menuindex": 1,
+      "baseblock_id": 0,
+      "published": 1,
+      "publishedon": 0,
+      "publishedby": 0,
+      "createdby": 1,
+      "createdon": 1686585379,
+      "editedby": 2,
+      "editedon": 1686922694,
+      "deleted": 0,
+      "deletedon": 0,
+      "deletedby": 0
     }
   ]
 }
