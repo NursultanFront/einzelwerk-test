@@ -15,6 +15,10 @@ import CustomSelect, { SelectType } from "../ui/Select/Select";
 
 import selectData from "@/text/select.json";
 
+interface IProps {
+  isActive: boolean;
+}
+
 type FormData = yup.InferType<typeof schema>;
 
 const schema = yup
@@ -31,11 +35,10 @@ const schema = yup
   })
   .required();
 
-const FormModal = () => {
+const FormModal = (props: IProps) => {
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors },
   } = useForm<FormData>({
     mode: "onSubmit",
@@ -43,8 +46,8 @@ const FormModal = () => {
     resolver: yupResolver(schema),
   });
 
-  const [modalOpen, setModalOpen] = useState(true);
-  const [isChecked, setChecked] = useState(false);
+  const [modalOpen, setModalOpen] = useState<boolean>(props.isActive);
+  const [isChecked, setChecked] = useState<boolean>(false);
   const [selectedOption, setSelectedOption] = useState<SelectType | null>(null);
 
   const { select } = selectData;
@@ -63,10 +66,6 @@ const FormModal = () => {
 
   const onSubmit = (data: FormData) =>
     console.log({ ...data, skill: selectedOption?.value });
-
-  useEffect(() => {
-    console.log(errors);
-  });
 
   return (
     <Popup isOpen={modalOpen} onClose={handleCloseModal}>
