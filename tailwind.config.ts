@@ -30,6 +30,7 @@ const config: Config = {
       "gray-700": "#374151",
       "blue-500": "#6366F1",
       "blue-600": "#4F46E5",
+      "error-color": "#FF2525",
     },
     extend: {
       borderRadius: {

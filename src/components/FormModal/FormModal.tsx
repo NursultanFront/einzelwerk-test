@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 import { Popup } from "../ui/customModal/Popup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,8 +10,10 @@ import TextField from "../ui/Input/TextField";
 import { Button } from "../ui/Buttons/Button";
 import InputPhone from "../ui/InputPhone/InputPhone";
 
-import "yup-phone";
 import CustomCheckbox from "../ui/Checkbox/Checkbox";
+import CustomSelect, { SelectType } from "../ui/Select/Select";
+
+import selectData from "@/text/select.json";
 
 type FormData = yup.InferType<typeof schema>;
 
@@ -43,6 +45,9 @@ const FormModal = () => {
 
   const [modalOpen, setModalOpen] = useState(true);
   const [isChecked, setChecked] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<SelectType | null>(null);
+
+  const { select } = selectData;
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -50,6 +55,10 @@ const FormModal = () => {
 
   const getCheckboxValue = (value: boolean) => {
     setChecked(value);
+  };
+
+  const getSelectValue = (value: SelectType) => {
+    setSelectedOption(value);
   };
 
   const onSubmit = (data: FormData) => console.log(data);
@@ -60,13 +69,15 @@ const FormModal = () => {
 
   return (
     <Popup isOpen={modalOpen} onClose={handleCloseModal}>
-      <div className="">
-        <h2 className="text-gray-950">Drop us a line</h2>
-        <p className="text-gray-700">
-          Our documentary campaigns feature leading figures, organisations and
-          leaders, in open and candid discussions.
-        </p>
-        <form className="auth-reg__form" onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <h2 className="text-gray-950">Drop us a line</h2>
+          <p className="text-gray-700">
+            Our documentary campaigns feature leading figures, organisations and
+            leaders, in open and candid discussions.
+          </p>
+        </div>
+        <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
           <TextField
             id="name"
             type="text"
@@ -84,6 +95,7 @@ const FormModal = () => {
               errors={errors}
               register={register}
               required
+              className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950"
             />
 
             <TextField
@@ -97,6 +109,14 @@ const FormModal = () => {
             />
           </div>
           <div className="">
+            <CustomSelect
+              value={selectedOption}
+              list={select}
+              getValue={getSelectValue}
+              className="text-gray-400 "
+            />
+          </div>
+          <div className="">
             <CustomCheckbox
               id="check"
               isChecked={isChecked}
@@ -105,7 +125,12 @@ const FormModal = () => {
               onChange={getCheckboxValue}
             />
           </div>
-          <Button className="" type="submit">
+
+          <Button
+            className="py-4 rounded-full"
+            type="submit"
+            disabled={!isChecked}
+          >
             Submit
           </Button>
         </form>

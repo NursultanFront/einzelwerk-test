@@ -26,7 +26,9 @@ const TextField = <T extends FieldValues>(props: TextFieldProps<T>) => {
   return (
     <div className="flex flex-col flex-grow">
       <input
-        className={props.className}
+        className={cn(props.className, {
+          "border border-error-color": props.errors[props.name]?.message,
+        })}
         id={props.id}
         type={props.type}
         {...props.register(props.name)}
@@ -36,8 +38,7 @@ const TextField = <T extends FieldValues>(props: TextFieldProps<T>) => {
         onBlur={() => setFocus(false)}
       />
       {props.errors && props.errors[props.name] && (
-        <p className="text-[#FF2525]">
-          {" "}
+        <p className="text-error-color">
           {props.errors[props.name]?.message?.toString()}
         </p>
       )}

@@ -6,6 +6,7 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 import InputMask from "react-input-mask";
+import cn from "clsx";
 
 interface TextFieldProps<T extends FieldValues> {
   value?: string;
@@ -26,7 +27,9 @@ const InputPhone = <T extends FieldValues>(props: TextFieldProps<T>) => {
         type={props.type}
         {...props.register(props.name)}
         mask="+9 999 999-99-99"
-        className="py-3 px-4 bg-gray-100 border rounded-lg border-gray-200 text-gray-950"
+        className={cn(props.className, {
+          "border border-error-color": props.errors[props.name]?.message,
+        })}
       />
       {props.errors && props.errors[props.name] && (
         <p className="text-[#FF2525]">
